@@ -1,8 +1,9 @@
 {
   "name": "proto-shift",
-  "version": "0.0.1-beta",
+  "version": "0.0.2-beta",
   "description": "Javascript proto-shifted apis.",
-  "main": "dist/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
