@@ -1,0 +1,13 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "lib": ["ESNext"],
+    "importsNotUsedAsValues": "remove",
+    "downlevelIteration": true,
+    "moduleResolution": "Node",
+    "sourceMap": true
+  },
+  "compileOnSave": true,
+  "exclude": ["node_modules"],
+  "include": ["."]
+}
