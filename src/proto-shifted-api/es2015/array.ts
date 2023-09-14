@@ -1,5 +1,6 @@
-import { /*@__PURE__*/ unbind } from "../../tool";
+import { /*@__PURE__*/ protoShift } from "../../tool";
 import type { Predicate } from "../../types";
+import { /*@__PURE__*/ arrayProto } from "../protos";
 
 /**
  * Returns the value of the first element in the array where predicate is true, and undefined
@@ -14,7 +15,7 @@ import type { Predicate } from "../../types";
 export const arrayFind: {
   <T, S extends T>(_this: T[], predicate: Predicate<T>): S | undefined;
   <T>(_this: T[], predicate: Predicate<T>): T | undefined;
-} = /*@__PURE__*/ unbind(Array.prototype.find) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.find) as any;
 /**
  * Returns the index of the first element in the array where predicate is true, and -1
  * otherwise.
@@ -25,7 +26,7 @@ export const arrayFind: {
  */
 export const arrayFindIndex: {
   <T>(_this: T[], predicate: Predicate<T>): number;
-} = /*@__PURE__*/ unbind(Array.prototype.findIndex) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.findIndex) as any;
 /**
  * Changes all array elements from `start` to `end` index to a static `value` and returns the modified array.
  * @param _this The source array.
@@ -37,7 +38,7 @@ export const arrayFindIndex: {
  */
 export const arrayFill: {
   <T>(_this: T[], value: T, start?: number, end?: number): typeof _this;
-} = /*@__PURE__*/ unbind(Array.prototype.fill) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.fill) as any;
 /**
  * Returns the this object after copying a section of the array identified by start and end
  * to the same array starting at position target
@@ -50,4 +51,4 @@ export const arrayFill: {
  */
 export const arrayCopyWithin: {
   <T>(_this: T[], target: number, start: number, end?: number): typeof _this;
-} = /*@__PURE__*/ unbind(Array.prototype.copyWithin) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.copyWithin) as any;

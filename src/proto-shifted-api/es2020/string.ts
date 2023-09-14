@@ -1,4 +1,5 @@
-import { /*@__PURE__*/ unbind } from "../../tool";
+import { /*@__PURE__*/ protoShift } from "../../tool";
+import { /*@__PURE__*/ stringProto } from "../protos";
 
 /**
  * Matches a string with a regular expression, and returns an iterable of matches
@@ -7,4 +8,4 @@ import { /*@__PURE__*/ unbind } from "../../tool";
  */
 export const stringMatchAll: {
   (_this: string, regexp: RegExp): IterableIterator<RegExpMatchArray>;
-} = /*@__PURE__*/ unbind(String.prototype.matchAll) as any;
+} = /*@__PURE__*/ protoShift(stringProto.matchAll) as any;

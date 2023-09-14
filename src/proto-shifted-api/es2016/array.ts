@@ -1,4 +1,5 @@
-import { /*@__PURE__*/ unbind } from "../../tool";
+import { /*@__PURE__*/ protoShift } from "../../tool";
+import { /*@__PURE__*/ arrayProto } from "../protos";
 
 /**
  * Determines whether an array includes a certain element, returning true or false as appropriate.
@@ -8,4 +9,4 @@ import { /*@__PURE__*/ unbind } from "../../tool";
  */
 export const arrayIncludes: {
   <T>(_this: T[], searchElement: T, fromIndex?: number): boolean;
-} = /*@__PURE__*/ unbind(Array.prototype.includes) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.includes) as any;

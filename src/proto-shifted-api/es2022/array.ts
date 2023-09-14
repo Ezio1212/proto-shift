@@ -1,4 +1,5 @@
-import { /*@__PURE__*/ unbind } from "../../tool";
+import { /*@__PURE__*/ protoShift } from "../../tool";
+import { /*@__PURE__*/ arrayProto } from "../protos";
 
 /**
  * Returns the item located at the specified index.
@@ -7,4 +8,4 @@ import { /*@__PURE__*/ unbind } from "../../tool";
  */
 export const arrayAt: {
   <T>(_this: T[], index: number): T | undefined;
-} = /*@__PURE__*/ unbind(Array.prototype.at) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.at) as any;

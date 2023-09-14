@@ -1,12 +1,14 @@
-import { /*@__PURE__*/ unbind } from "../../tool";
+import { /*@__PURE__*/ protoShift } from "../../tool";
 import type { StringReplacer } from "../../types";
+import { stringProto } from "../protos";
+
 /**
  * Returns the character at the specified index.
  * @param pos The zero-based index of the desired character.
  */
 export const stringCharAt: {
   (_this: string, pos: number): string;
-} = /*@__PURE__*/ unbind(String.prototype.charAt) as any;
+} = /*@__PURE__*/ protoShift(stringProto.charAt) as any;
 
 /**
  * Returns the Unicode value of the character at the specified location.
@@ -14,7 +16,7 @@ export const stringCharAt: {
  */
 export const stringCharCodeAt: {
   (_this: string, index: number): number;
-} = /*@__PURE__*/ unbind(String.prototype.charCodeAt) as any;
+} = /*@__PURE__*/ protoShift(stringProto.charCodeAt) as any;
 
 /**
  * Returns a string that contains the concatenation of two or more strings.
@@ -22,7 +24,7 @@ export const stringCharCodeAt: {
  */
 export const stringConcat: {
   (_this: string, ...strings: string[]): string;
-} = /*@__PURE__*/ unbind(String.prototype.concat) as any;
+} = /*@__PURE__*/ protoShift(stringProto.concat) as any;
 
 /**
  * Returns the position of the first occurrence of a substring.
@@ -31,7 +33,7 @@ export const stringConcat: {
  */
 export const stringIndexOf: {
   (_this: string, searchString: string, position?: number): number;
-} = /*@__PURE__*/ unbind(String.prototype.indexOf) as any;
+} = /*@__PURE__*/ protoShift(stringProto.indexOf) as any;
 
 /**
  * Returns the last occurrence of a substring in the string.
@@ -40,7 +42,7 @@ export const stringIndexOf: {
  */
 export const stringLastIndexOf: {
   (_this: string, searchString: string, position?: number): number;
-} = /*@__PURE__*/ unbind(String.prototype.lastIndexOf) as any;
+} = /*@__PURE__*/ protoShift(stringProto.lastIndexOf) as any;
 
 /**
  * Determines whether two strings are equivalent in the current locale.
@@ -48,7 +50,7 @@ export const stringLastIndexOf: {
  */
 export const stringLocaleCompare: {
   (_this: string, that: string): number;
-} = /*@__PURE__*/ unbind(String.prototype.localeCompare) as any;
+} = /*@__PURE__*/ protoShift(stringProto.localeCompare) as any;
 
 /**
  * Matches a string with a regular expression, and returns an array containing the results of that search.
@@ -56,7 +58,7 @@ export const stringLocaleCompare: {
  */
 export const stringMatch: {
   (_this: string, regexp: string | RegExp): RegExpMatchArray | null;
-} = /*@__PURE__*/ unbind(String.prototype.match) as any;
+} = /*@__PURE__*/ protoShift(stringProto.match) as any;
 
 export const stringReplace: {
   /**
@@ -75,7 +77,7 @@ export const stringReplace: {
     searchValue: string | RegExp,
     replacer: StringReplacer
   ): string;
-} = /*@__PURE__*/ unbind(String.prototype.replace) as any;
+} = /*@__PURE__*/ protoShift(stringProto.replace) as any;
 
 /**
  * Finds the first substring match in a regular expression search.
@@ -83,7 +85,7 @@ export const stringReplace: {
  */
 export const stringSearch: {
   (_this: string, regexp: string | RegExp): number;
-} = /*@__PURE__*/ unbind(String.prototype.search) as any;
+} = /*@__PURE__*/ protoShift(stringProto.search) as any;
 
 /**
  * Returns a section of a string.
@@ -93,7 +95,7 @@ export const stringSearch: {
  */
 export const stringSlice: {
   (_this: string, start?: number, end?: number): string;
-} = /*@__PURE__*/ unbind(String.prototype.slice) as any;
+} = /*@__PURE__*/ protoShift(stringProto.slice) as any;
 
 /**
  * Split a string into substrings using the specified separator and return them as an array.
@@ -102,7 +104,7 @@ export const stringSlice: {
  */
 export const stringSplit: {
   (_this: string, separator: string | RegExp, limit?: number): string[];
-} = /*@__PURE__*/ unbind(String.prototype.split) as any;
+} = /*@__PURE__*/ protoShift(stringProto.split) as any;
 
 /**
  * Returns the substring at the specified location within a String object.
@@ -112,32 +114,32 @@ export const stringSplit: {
  */
 export const stringSubstring: {
   (_this: string, start: number, end?: number): string;
-} = /*@__PURE__*/ unbind(String.prototype.substring) as any;
+} = /*@__PURE__*/ protoShift(stringProto.substring) as any;
 
 /** Converts all the alphabetic characters in a string to lowercase. */
 export const stringToLowerCase: {
   (_this: string): string;
-} = /*@__PURE__*/ unbind(String.prototype.toLowerCase) as any;
+} = /*@__PURE__*/ protoShift(stringProto.toLowerCase) as any;
 
 /** Converts all alphabetic characters to lowercase, taking into account the host environment's current locale. */
 export const stringToLocaleLowerCase: {
   (_this: string, locales?: string | string[]): string;
-} = /*@__PURE__*/ unbind(String.prototype.toLocaleLowerCase) as any;
+} = /*@__PURE__*/ protoShift(stringProto.toLocaleLowerCase) as any;
 
 /** Converts all the alphabetic characters in a string to uppercase. */
 export const stringToUpperCase: {
   (_this: string): string;
-} = /*@__PURE__*/ unbind(String.prototype.toUpperCase) as any;
+} = /*@__PURE__*/ protoShift(stringProto.toUpperCase) as any;
 
 /** Returns a string where all alphabetic characters have been converted to uppercase, taking into account the host environment's current locale. */
 export const stringToLocaleUpperCase: {
   (_this: string, locales?: string | string[]): string;
-} = /*@__PURE__*/ unbind(String.prototype.toLocaleUpperCase) as any;
+} = /*@__PURE__*/ protoShift(stringProto.toLocaleUpperCase) as any;
 
 /** Removes the leading and trailing white space and line terminator characters from a string. */
 export const stringTrim: {
   (_this: string): string;
-} = /*@__PURE__*/ unbind(String.prototype.trim) as any;
+} = /*@__PURE__*/ protoShift(stringProto.trim) as any;
 
 /**
  * Gets a substring beginning at the specified location and having the specified length.
@@ -147,7 +149,7 @@ export const stringTrim: {
  */
 export const stringSubstr: {
   (_this: string, from: number, length?: number): string;
-} = /*@__PURE__*/ unbind(String.prototype.substr) as any;
+} = /*@__PURE__*/ protoShift(stringProto.substr) as any;
 
 /**
  * Gets a string from spefic char codes

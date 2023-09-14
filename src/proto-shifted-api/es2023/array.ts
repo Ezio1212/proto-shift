@@ -1,5 +1,6 @@
-import { /*@__PURE__*/ unbind } from "../../tool";
+import { /*@__PURE__*/ protoShift } from "../../tool";
 import { Predicate } from "../../types";
+import { /*@__PURE__*/ arrayProto } from "../protos";
 
 /**
  * Returns the value of the last element in the array where predicate is true, and undefined
@@ -11,4 +12,4 @@ import { Predicate } from "../../types";
  */
 export const arrayFindLast: {
   <T>(_this: T[], predicate: Predicate<T>): T | undefined;
-} = /*@__PURE__*/ unbind(Array.prototype.findLast) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.findLast) as any;

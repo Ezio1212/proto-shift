@@ -1,4 +1,5 @@
-import { /*@__PURE__*/ unbind } from "../../tool";
+import { /*@__PURE__*/ protoShift } from "../../tool";
+import { /*@__PURE__*/ functionProto } from "../protos";
 
 /**
  * Calls the function, substituting the specified object for the this value of the function, and the specified array for the arguments of the function.
@@ -11,7 +12,7 @@ export const functionApply: {
     thisArg: any,
     argArray?: Parameters<T>
   ): ReturnType<T>;
-} = /*@__PURE__*/ unbind(Function.prototype.apply) as any;
+} = /*@__PURE__*/ protoShift(functionProto.apply) as any;
 
 /**
  * Calls a method of an object, substituting another object for the current object.
@@ -24,7 +25,7 @@ export const functionCall: {
     thisArg: any,
     ...argArray: Parameters<T>
   ): ReturnType<T>;
-} = /*@__PURE__*/ unbind(Function.prototype.call) as any;
+} = /*@__PURE__*/ protoShift(functionProto.call) as any;
 
 /**
  * For a given function, creates a bound function that has the same body as the original function.
@@ -38,4 +39,4 @@ export const functionBind: {
     thisArg: any,
     ...argArray: Parameters<T>
   ): T;
-} = /*@__PURE__*/ unbind(Function.prototype.bind) as any;
+} = /*@__PURE__*/ protoShift(functionProto.bind) as any;

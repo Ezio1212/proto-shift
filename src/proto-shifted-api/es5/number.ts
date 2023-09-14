@@ -1,4 +1,5 @@
-import { /*@__PURE__*/ unbind } from "../../tool";
+import { /*@__PURE__*/ protoShift } from "../../tool";
+import { numberProto } from "../protos";
 
 /**
  * Returns a string representation of an object.
@@ -6,7 +7,7 @@ import { /*@__PURE__*/ unbind } from "../../tool";
  */
 export const numberToString: {
   (_this: Number, radix?: number): string;
-} = /*@__PURE__*/ unbind(Number.prototype.toString) as any;
+} = /*@__PURE__*/ protoShift(numberProto.toString) as any;
 
 /**
  * Returns a string representing a number in fixed-point notation.
@@ -14,7 +15,7 @@ export const numberToString: {
  */
 export const numberToFixed: {
   (_this: Number, fractionDigits?: number): string;
-} = /*@__PURE__*/ unbind(Number.prototype.toFixed) as any;
+} = /*@__PURE__*/ protoShift(numberProto.toFixed) as any;
 
 /**
  * Returns a string containing a number represented in exponential notation.
@@ -22,7 +23,7 @@ export const numberToFixed: {
  */
 export const numberToExponential: {
   (_this: Number, fractionDigits?: number): string;
-} = /*@__PURE__*/ unbind(Number.prototype.toExponential) as any;
+} = /*@__PURE__*/ protoShift(numberProto.toExponential) as any;
 
 /**
  * Returns a string containing a number represented either in exponential or fixed-point notation with a specified number of digits.
@@ -30,4 +31,4 @@ export const numberToExponential: {
  */
 export const numberToPrecision: {
   (_this: Number, precision?: number): string;
-} = /*@__PURE__*/ unbind(Number.prototype.toPrecision) as any;
+} = /*@__PURE__*/ protoShift(numberProto.toPrecision) as any;

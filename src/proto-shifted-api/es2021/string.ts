@@ -1,5 +1,6 @@
-import { /*@__PURE__*/ unbind } from "../../tool";
+import { /*@__PURE__*/ protoShift } from "../../tool";
 import type { StringReplacer } from "../../types";
+import { /*@__PURE__*/ stringProto } from "../protos";
 
 export const stringReplaceAll: {
   /**
@@ -18,4 +19,4 @@ export const stringReplaceAll: {
     searchValue: string | RegExp,
     replacer: StringReplacer
   ): string;
-} = /*@__PURE__*/ unbind(String.prototype.replaceAll) as any;
+} = /*@__PURE__*/ protoShift(stringProto.replaceAll) as any;

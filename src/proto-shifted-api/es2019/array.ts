@@ -1,5 +1,6 @@
-import { /*@__PURE__*/ unbind } from "../../tool";
+import { /*@__PURE__*/ protoShift } from "../../tool";
 import type { Mapper } from "../../types";
+import { /*@__PURE__*/ arrayProto } from "../protos";
 /**
  * Returns a new array with all sub-array elements concatenated into it recursively up to the
  * specified depth.
@@ -8,7 +9,7 @@ import type { Mapper } from "../../types";
  */
 export const arrayFlat: {
   <T, D extends number = 1>(_this: T[], depth?: D): FlatArray<T[], D>[];
-} = /*@__PURE__*/ unbind(Array.prototype.flat) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.flat) as any;
 /**
  * Calls a defined callback function on each element of an array. Then, flattens the result into
  * a new array.
@@ -19,4 +20,4 @@ export const arrayFlat: {
  */
 export const arrayFlatMap: {
   <T, U>(_this: T[], callback: Mapper<T, U | ReadonlyArray<U>>): U[];
-} = /*@__PURE__*/ unbind(Array.prototype.flatMap) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.flatMap) as any;

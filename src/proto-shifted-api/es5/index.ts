@@ -1,6 +1,10 @@
-// es 5
 export * from "./array";
+export * from "./array-buffer";
+export * from "./data-view";
+export * from "./date";
 export * from "./function";
 export * from "./number";
 export * from "./object";
+export * from "./promise";
+export * from "./reg-exp";
 export * from "./string";

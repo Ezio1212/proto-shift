@@ -1,0 +1,13 @@
+export const arrayProto = Array.prototype;
+export const dateProto = Date.prototype;
+export const functionProto = Function.prototype;
+export const numberProto = Number.prototype;
+export const objectProto = Object.prototype;
+export const stringProto = String.prototype;
+export const regExpProto = RegExp.prototype;
+export const mapProto = Map.prototype;
+export const weakMapProto = WeakMap.prototype;
+export const setProto = Set.prototype;
+export const weakSetProto = WeakSet.prototype;
+export const promiseProto = Promise.prototype;
+export const arrayBufferProto = ArrayBuffer.prototype;

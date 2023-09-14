@@ -18,13 +18,3 @@ export type Traverser<T> = {
 export type StringReplacer = {
   (substring: string, ...args: any[]): string;
 };
-
-export type integer = number;
-
-export interface Lengthable {
-  length: integer;
-}
-
-export interface Sizable {
-  size: integer;
-}

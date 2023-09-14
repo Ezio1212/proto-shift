@@ -1,5 +1,6 @@
-import { /*@__PURE__*/ unbind } from "../../tool";
+import { /*@__PURE__*/ protoShift } from "../../tool";
 import { Mapper, Predicate, Reducer, Traverser } from "../../types";
+import { /*@__PURE__*/ arrayProto } from "../protos";
 
 /**
  * Combines two or more arrays.
@@ -9,7 +10,7 @@ import { Mapper, Predicate, Reducer, Traverser } from "../../types";
  */
 export const arrayConcat: {
   <T>(_this: T[], ...items: ConcatArray<T>[]): T[];
-} = /*@__PURE__*/ unbind(Array.prototype.concat) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.concat) as any;
 
 /**
  * Determines whether all the members of an array satisfy the specified test.
@@ -21,7 +22,7 @@ export const arrayConcat: {
 export const arrayEvery: {
   // <T, S extends T>(_this: T[], predicate: Predicate<T, S>): _this is S[];
   <T>(_this: T[], predicate: Predicate<T>): boolean;
-} = /*@__PURE__*/ unbind(Array.prototype.every) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.every) as any;
 
 /**
  * Returns the elements of an array that meet the condition specified in a callback function.
@@ -31,7 +32,7 @@ export const arrayEvery: {
 export const arrayFilter: {
   // <T, S extends T>(_this: T[], predicate: Predicate<T, S>): S[];
   <T>(_this: T[], predicate: Predicate<T>): T[];
-} = /*@__PURE__*/ unbind(Array.prototype.filter) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.filter) as any;
 
 /**
  * Performs the specified action for each element in an array.
@@ -40,7 +41,7 @@ export const arrayFilter: {
  */
 export const arrayForEach: {
   <T>(_this: T[], traverser: Traverser<T>): void;
-} = /*@__PURE__*/ unbind(Array.prototype.forEach) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.forEach) as any;
 
 /**
  * Returns the index of the first occurrence of a value in an array, or -1 if it is not present.
@@ -50,7 +51,7 @@ export const arrayForEach: {
  */
 export const arrayIndexOf: {
   <T>(_this: T[], searchElement: T, fromIndex?: number): number;
-} = /*@__PURE__*/ unbind(Array.prototype.indexOf) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.indexOf) as any;
 
 /**
  * Adds all the elements of an array into a string, separated by the specified separator string.
@@ -59,7 +60,7 @@ export const arrayIndexOf: {
  */
 export const arrayJoin: {
   <T>(_this: T[], separator?: string): string;
-} = /*@__PURE__*/ unbind(Array.prototype.join) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.join) as any;
 
 /**
  * Returns the index of the last occurrence of a specified value in an array, or -1 if it is not present.
@@ -69,7 +70,7 @@ export const arrayJoin: {
  */
 export const arrayLastIndexOf: {
   <T>(_this: T[], searchElement: T, fromIndex?: number): number;
-} = /*@__PURE__*/ unbind(Array.prototype.lastIndexOf) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.lastIndexOf) as any;
 
 /**
  * Calls a defined callback function on each element of an array, and returns an array that contains the results.
@@ -79,7 +80,7 @@ export const arrayLastIndexOf: {
  */
 export const arrayMap: {
   <T, U>(_this: T[], mapper: Mapper<T, U>): U[];
-} = /*@__PURE__*/ unbind(Array.prototype.map) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.map) as any;
 
 /**
  * Removes the last element from an array and returns it.
@@ -88,7 +89,7 @@ export const arrayMap: {
  */
 export const arrayPop: {
   <T>(_this: T[]): T | undefined;
-} = /*@__PURE__*/ unbind(Array.prototype.pop) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.pop) as any;
 
 /**
  * Appends new elements to the end of an array, and returns the new length of the array.
@@ -97,7 +98,7 @@ export const arrayPop: {
  */
 export const arrayPush: {
   <T>(_this: T[], ...items: T[]): number;
-} = /*@__PURE__*/ unbind(Array.prototype.push) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.push) as any;
 /**
  * Calls the specified callback function for all the elements in an array. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function.
  * @param _this The source array.
@@ -108,7 +109,7 @@ export const arrayReduce: {
   <T>(_this: T[], reducer: Reducer<T, T>): T;
   <T>(_this: T[], reducer: Reducer<T, T>, initialValue: T): T;
   <T, U>(_this: T[], reducer: Reducer<T, U>, initialValue: U): U;
-} = /*@__PURE__*/ unbind(Array.prototype.reduce) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.reduce) as any;
 /**
  * Calls the specified callback function for all the elements in an array, in descending order. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function.
  * @param _this The source array.
@@ -119,7 +120,7 @@ export const arrayReduceRight: {
   <T>(_this: T[], reducer: Reducer<T, T>): T;
   <T>(_this: T[], reducer: Reducer<T, T>, initialValue: T): T;
   <T, U>(_this: T[], reducer: Reducer<T, U>, initialValue: U): U;
-} = /*@__PURE__*/ unbind(Array.prototype.reduceRight) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.reduceRight) as any;
 
 /**
  * Reverses the elements in an array in place.
@@ -128,7 +129,7 @@ export const arrayReduceRight: {
  */
 export const arrayReverse: {
   <T>(_this: T[]): T[];
-} = /*@__PURE__*/ unbind(Array.prototype.reverse) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.reverse) as any;
 
 /**
  * Removes the first element from an array and returns it.
@@ -137,7 +138,7 @@ export const arrayReverse: {
  */
 export const arrayShift: {
   <T>(_this: T[]): T | undefined;
-} = /*@__PURE__*/ unbind(Array.prototype.shift) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.shift) as any;
 
 /**
  * Returns a copy of a section of an array.
@@ -151,7 +152,7 @@ export const arrayShift: {
  */
 export const arraySlice: {
   <T>(_this: T[], start?: number, end?: number): T[];
-} = /*@__PURE__*/ unbind(Array.prototype.slice) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.slice) as any;
 
 /**
  * Determines whether the specified callback function returns true for any element of an array.
@@ -162,7 +163,7 @@ export const arraySlice: {
  */
 export const arraySome: {
   <T>(_this: T[], predicate: Predicate<T>): boolean;
-} = /*@__PURE__*/ unbind(Array.prototype.some) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.some) as any;
 
 /**
  * Sorts an array in place.
@@ -177,7 +178,7 @@ export const arraySome: {
  */
 export const arraySort: {
   <T>(_this: T[], compareFn?: (a: T, b: T) => number): T[];
-} = /*@__PURE__*/ unbind(Array.prototype.sort) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.sort) as any;
 
 /**
  * Removes elements from an array and, if necessary, inserts new elements in their place, returning the deleted elements.
@@ -189,7 +190,7 @@ export const arraySort: {
 export const arraySplice: {
   <T>(_this: T[], start: number, deleteCount?: number): T[];
   <T>(_this: T[], start: number, deleteCount: number, ...items: T[]): T[];
-} = /*@__PURE__*/ unbind(Array.prototype.splice) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.splice) as any;
 
 /**
  * Inserts new elements at the start of an array, and returns the new length of the array.
@@ -198,4 +199,4 @@ export const arraySplice: {
  */
 export const arrayUnshift: {
   <T>(_this: T[], ...items: T[]): number;
-} = /*@__PURE__*/ unbind(Array.prototype.unshift) as any;
+} = /*@__PURE__*/ protoShift(arrayProto.unshift) as any;

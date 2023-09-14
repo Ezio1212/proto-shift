@@ -7,9 +7,9 @@
  * @param value the property function to be transformed.
  * @returns a new function.
  */
-export const unbind = /*@__PURE__*/ Function.call.bind(
+export const protoShift = /*@__PURE__*/ Function.call.bind(
   Function.bind,
   Function.call
 );
 
-export const protoShift = /*@__PURE__*/ unbind;
+export const unbind = /*@__PURE__*/ protoShift;
