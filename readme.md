@@ -30,59 +30,61 @@ const join = protoShift(Array.prototype.join);
 join([1, 2, 3], "|"); // 1|2|3
 ```
 
-This Library includes most of Javascript basic apis.
+This Library includes most of Javascript basic apis. You can use them like camelcased(`ClassName` + `FunctionName`).
+
+For Example, to use `Array.prototype.filter`, you can use `arrayFilter` to instead.
 
 ```javascript
-// in index.d.ts
-
-/** Removes the trailing white space and line terminator characters from a string. */
-declare const stringTrimEnd: {
-    (_this: string): string;
-};
-/** Removes the leading white space and line terminator characters from a string. */
-declare const stringTrimStart: {
-    (_this: string): string;
-};
-/**
- * Removes the leading white space and line terminator characters from a string.
- * @deprecated A legacy feature for browser compatibility. Use `trimStart` instead
- */
-declare const stringTrimLeft: {
-    (_this: string): string;
-};
-/**
- * Removes the trailing white space and line terminator characters from a string.
- * @deprecated A legacy feature for browser compatibility. Use `trimEnd` instead
- */
-declare const stringTrimRight: {
-    (_this: string): string;
-};
-
-/**
- * Matches a string with a regular expression, and returns an iterable of matches
- * containing the results of that search.
- * @param regexp A variable name or string literal containing the regular expression pattern and flags.
- */
-declare const stringMatchAll: {
-    (_this: string, regexp: RegExp): IterableIterator<RegExpMatchArray>;
-};
-```
-
-For Example, to use `Array.prototype.filter`, you can use `arrayFilter` to instead:
-
-```typescript
 import { arrayFilter } from "proto-shift";
 
 arrayFilter([1, 2, 3], (e) => e % 2); // [1, 3]
 ```
 
-to find basic javascrpit functions, you can find them like followings.
-
-Example:
+More Examples:
 
 1. String.prototype.charCodeAt => stringCharCodeAt
+
 2. Array.prototype.map => arrayMap
-3. ...
+
+3. Array.prototype.concat => arrayConcat
+
+### ES Compability
+
+Compability According to `typescript`'s native declarations in `<package-DIR>\lib\es*.d.ts`.
+
+🟢 All supported. 🟡 Partial supported. 🔴 Not supported. ➖ Not supported by language.
+
+| Class             | ES5 | ES2015 | ES2016 | ES2017 | ES2018 | ES2019 | ES2020 | ES2021 | ES2022 | ES2023 |
+| ----------------- | --- | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| Function          | 🟢  | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
+| Object            | 🟢  | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
+| String            | 🟢  | 🟢     | 🟢     | 🟢     | 🟢     | 🟢     | 🟢     | 🟢     | 🟢     | 🟢     |
+| Boolean           | 🔴  | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
+| Number            | 🔴  | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
+| Date              | 🔴  | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
+| RegExp            | 🔴  | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
+| Array             | 🟢  | 🟢     | 🟢     | 🟢     | 🟢     | 🟢     | 🟢     | 🟢     | 🟢     | 🟢     |
+| Promise           | 🔴  | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
+| ArrayBuffer       | 🔴  | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
+| DataView          | 🔴  | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
+| Int8Array         | 🔴  | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
+| UInt8Array        | 🔴  | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
+| Uint8ClampedArray | 🔴  | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
+| Int16Array        | 🔴  | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
+| Uint16Array       | 🔴  | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
+| Int32Array        | 🔴  | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
+| Uint32Array       | 🔴  | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
+| Float32Array      | 🔴  | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
+| Float64Array      | 🔴  | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
+| Map               | ➖  | 🟢     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
+| WeakMap           | ➖  | 🟢     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
+| Set               | ➖  | 🟢     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
+| WeakSet           | ➖  | 🟢     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
+| Proxy             | ➖  | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
+| SharedArrayBuffer | ➖  | ➖     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
+| BigInt            | ➖  | ➖     | ➖     | ➖     | ➖     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
+| BigInt64Array     | ➖  | ➖     | ➖     | ➖     | ➖     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
+| BigUint64Array    | ➖  | ➖     | ➖     | ➖     | ➖     | 🔴     | 🔴     | 🔴     | 🔴     | 🔴     |
 
 ## License
 
