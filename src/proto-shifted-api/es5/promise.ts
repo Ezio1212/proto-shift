@@ -1,5 +1,5 @@
-import { protoShift } from "../../tool";
-import { promiseProto } from "../protos";
+import { /*@__PURE__*/ protoShift } from "../../tool";
+import { /*@__PURE__*/ promiseProto } from "../protos";
 
 /**
  * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -8,17 +8,17 @@ import { promiseProto } from "../protos";
  * @returns A Promise for the completion of which ever callback is executed.
  */
 export const promiseThen: {
-  <T, TResult1 = T, TResult2 = never>(
-    promise: Promise<T>,
-    onfulfilled?:
-      | ((value: T) => TResult1 | PromiseLike<TResult1>)
-      | undefined
-      | null,
-    onrejected?:
-      | ((reason: any) => TResult2 | PromiseLike<TResult2>)
-      | undefined
-      | null
-  ): Promise<TResult1 | TResult2>;
+    <T, TResult1 = T, TResult2 = never>(
+        promise: Promise<T>,
+        onfulfilled?:
+            | ((value: T) => TResult1 | PromiseLike<TResult1>)
+            | undefined
+            | null,
+        onrejected?:
+            | ((reason: any) => TResult2 | PromiseLike<TResult2>)
+            | undefined
+            | null
+    ): Promise<TResult1 | TResult2>;
 } = /*@__PURE__*/ protoShift(promiseProto.then) as any;
 
 /**
@@ -27,11 +27,11 @@ export const promiseThen: {
  * @returns A Promise for the completion of the callback.
  */
 export const promiseCatch: {
-  <T, TResult = never>(
-    promise: Promise<T>,
-    onrejected?:
-      | ((reason: any) => TResult | PromiseLike<TResult>)
-      | undefined
-      | null
-  ): Promise<T | TResult>;
+    <T, TResult = never>(
+        promise: Promise<T>,
+        onrejected?:
+            | ((reason: any) => TResult | PromiseLike<TResult>)
+            | undefined
+            | null
+    ): Promise<T | TResult>;
 } = /*@__PURE__*/ protoShift(promiseProto.catch) as any;

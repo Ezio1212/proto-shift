@@ -8,5 +8,5 @@ import { /*@__PURE__*/ arrayProto } from "../protos";
  * @param fromIndex The position in this array at which to begin searching for searchElement.
  */
 export const arrayIncludes: {
-  <T>(_this: T[], searchElement: T, fromIndex?: number): boolean;
+    <T>(_this: T[], searchElement: T, fromIndex?: number): boolean;
 } = /*@__PURE__*/ protoShift(arrayProto.includes) as any;

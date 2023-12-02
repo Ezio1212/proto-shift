@@ -8,7 +8,7 @@ import { /*@__PURE__*/ arrayProto } from "../protos";
  * @param depth The maximum recursion depth
  */
 export const arrayFlat: {
-  <T, D extends number = 1>(_this: T[], depth?: D): FlatArray<T[], D>[];
+    <T, D extends number = 1>(_this: T[], depth?: D): FlatArray<T[], D>[];
 } = /*@__PURE__*/ protoShift(arrayProto.flat) as any;
 /**
  * Calls a defined callback function on each element of an array. Then, flattens the result into
@@ -19,5 +19,5 @@ export const arrayFlat: {
  * callback function one time for each element in the array.
  */
 export const arrayFlatMap: {
-  <T, U>(_this: T[], callback: Mapper<T, U | ReadonlyArray<U>>): U[];
+    <T, U>(_this: T[], callback: Mapper<T, U | ReadonlyArray<U>>): U[];
 } = /*@__PURE__*/ protoShift(arrayProto.flatMap) as any;

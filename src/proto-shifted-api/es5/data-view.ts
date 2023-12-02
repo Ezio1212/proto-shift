@@ -7,7 +7,7 @@ import { protoShift } from "../../tool";
  * @param littleEndian If false or undefined, a big-endian value should be read.
  */
 export const dataViewGetFloat32: {
-  (dataView: DataView, byteOffset: number, littleEndian?: boolean): number;
+    (dataView: DataView, byteOffset: number, littleEndian?: boolean): number;
 } = /*@__PURE__*/ protoShift(DataView.prototype.getFloat32) as any;
 
 /**
@@ -17,7 +17,7 @@ export const dataViewGetFloat32: {
  * @param littleEndian If false or undefined, a big-endian value should be read.
  */
 export const dataViewGetFloat64: {
-  (dataView: DataView, byteOffset: number, littleEndian?: boolean): number;
+    (dataView: DataView, byteOffset: number, littleEndian?: boolean): number;
 } = /*@__PURE__*/ protoShift(DataView.prototype.getFloat64) as any;
 
 /**
@@ -26,7 +26,7 @@ export const dataViewGetFloat64: {
  * @param byteOffset The place in the buffer at which the value should be retrieved.
  */
 export const dataViewGetInt8: {
-  (dataView: DataView, byteOffset: number): number;
+    (dataView: DataView, byteOffset: number): number;
 } = /*@__PURE__*/ protoShift(DataView.prototype.getInt8) as any;
 
 /**
@@ -36,7 +36,7 @@ export const dataViewGetInt8: {
  * @param littleEndian If false or undefined, a big-endian value should be read.
  */
 export const dataViewGetInt16: {
-  (dataView: DataView, byteOffset: number, littleEndian?: boolean): number;
+    (dataView: DataView, byteOffset: number, littleEndian?: boolean): number;
 } = /*@__PURE__*/ protoShift(DataView.prototype.getInt16) as any;
 /**
  * Gets the Int32 value at the specified byte offset from the start of the view. There is
@@ -45,7 +45,7 @@ export const dataViewGetInt16: {
  * @param littleEndian If false or undefined, a big-endian value should be read.
  */
 export const dataViewGetInt32: {
-  (dataView: DataView, byteOffset: number, littleEndian?: boolean): number;
+    (dataView: DataView, byteOffset: number, littleEndian?: boolean): number;
 } = /*@__PURE__*/ protoShift(DataView.prototype.getInt32) as any;
 
 /**
@@ -54,7 +54,7 @@ export const dataViewGetInt32: {
  * @param byteOffset The place in the buffer at which the value should be retrieved.
  */
 export const dataViewGetUint8: {
-  (dataView: DataView, byteOffset: number): number;
+    (dataView: DataView, byteOffset: number): number;
 } = /*@__PURE__*/ protoShift(DataView.prototype.getUint8) as any;
 
 /**
@@ -64,7 +64,7 @@ export const dataViewGetUint8: {
  * @param littleEndian If false or undefined, a big-endian value should be read.
  */
 export const dataViewGetUint16: {
-  (dataView: DataView, byteOffset: number, littleEndian?: boolean): number;
+    (dataView: DataView, byteOffset: number, littleEndian?: boolean): number;
 } = /*@__PURE__*/ protoShift(DataView.prototype.getUint16) as any;
 
 /**
@@ -74,7 +74,7 @@ export const dataViewGetUint16: {
  * @param littleEndian If false or undefined, a big-endian value should be read.
  */
 export const dataViewGetUint32: {
-  (dataView: DataView, byteOffset: number, littleEndian?: boolean): number;
+    (dataView: DataView, byteOffset: number, littleEndian?: boolean): number;
 } = /*@__PURE__*/ protoShift(DataView.prototype.getUint32) as any;
 
 /**
@@ -84,12 +84,12 @@ export const dataViewGetUint32: {
  * @param littleEndian If false or undefined, a big-endian value should be written.
  */
 export const dataViewSetFloat32: {
-  (
-    dataView: DataView,
-    byteOffset: number,
-    value: number,
-    littleEndian?: boolean
-  ): void;
+    (
+        dataView: DataView,
+        byteOffset: number,
+        value: number,
+        littleEndian?: boolean
+    ): void;
 } = /*@__PURE__*/ protoShift(DataView.prototype.setFloat32) as any;
 
 /**
@@ -99,12 +99,12 @@ export const dataViewSetFloat32: {
  * @param littleEndian If false or undefined, a big-endian value should be written.
  */
 export const dataViewSetFloat64: {
-  (
-    dataView: DataView,
-    byteOffset: number,
-    value: number,
-    littleEndian?: boolean
-  ): void;
+    (
+        dataView: DataView,
+        byteOffset: number,
+        value: number,
+        littleEndian?: boolean
+    ): void;
 } = /*@__PURE__*/ protoShift(DataView.prototype.setFloat64) as any;
 
 /**
@@ -113,7 +113,7 @@ export const dataViewSetFloat64: {
  * @param value The value to set.
  */
 export const dataViewSetInt8: {
-  (dataView: DataView, byteOffset: number, value: number): void;
+    (dataView: DataView, byteOffset: number, value: number): void;
 } = /*@__PURE__*/ protoShift(DataView.prototype.setInt8) as any;
 
 /**
@@ -123,12 +123,12 @@ export const dataViewSetInt8: {
  * @param littleEndian If false or undefined, a big-endian value should be written.
  */
 export const dataViewSetInt16: {
-  (
-    dataView: DataView,
-    byteOffset: number,
-    value: number,
-    littleEndian?: boolean
-  ): void;
+    (
+        dataView: DataView,
+        byteOffset: number,
+        value: number,
+        littleEndian?: boolean
+    ): void;
 } = /*@__PURE__*/ protoShift(DataView.prototype.setInt16) as any;
 
 /**
@@ -138,12 +138,12 @@ export const dataViewSetInt16: {
  * @param littleEndian If false or undefined, a big-endian value should be written.
  */
 export const dataViewSetInt32: {
-  (
-    dataView: DataView,
-    byteOffset: number,
-    value: number,
-    littleEndian?: boolean
-  ): void;
+    (
+        dataView: DataView,
+        byteOffset: number,
+        value: number,
+        littleEndian?: boolean
+    ): void;
 } = /*@__PURE__*/ protoShift(DataView.prototype.setInt32) as any;
 
 /**
@@ -152,7 +152,7 @@ export const dataViewSetInt32: {
  * @param value The value to set.
  */
 export const dataViewSetUint8: {
-  (dataView: DataView, byteOffset: number, value: number): void;
+    (dataView: DataView, byteOffset: number, value: number): void;
 } = /*@__PURE__*/ protoShift(DataView.prototype.setUint8) as any;
 
 /**
@@ -162,12 +162,12 @@ export const dataViewSetUint8: {
  * @param littleEndian If false or undefined, a big-endian value should be written.
  */
 export const dataViewSetUint16: {
-  (
-    dataView: DataView,
-    byteOffset: number,
-    value: number,
-    littleEndian?: boolean
-  ): void;
+    (
+        dataView: DataView,
+        byteOffset: number,
+        value: number,
+        littleEndian?: boolean
+    ): void;
 } = /*@__PURE__*/ protoShift(DataView.prototype.setUint16) as any;
 
 /**
@@ -177,10 +177,10 @@ export const dataViewSetUint16: {
  * @param littleEndian If false or undefined, a big-endian value should be written.
  */
 export const dataViewSetUint32: {
-  (
-    dataView: DataView,
-    byteOffset: number,
-    value: number,
-    littleEndian?: boolean
-  ): void;
+    (
+        dataView: DataView,
+        byteOffset: number,
+        value: number,
+        littleEndian?: boolean
+    ): void;
 } = /*@__PURE__*/ protoShift(DataView.prototype.setUint32) as any;

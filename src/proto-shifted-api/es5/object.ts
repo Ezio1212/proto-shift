@@ -1,9 +1,9 @@
 import { /*@__PURE__*/ protoShift } from "../../tool";
-import { objectProto } from "../protos";
+import { /*@__PURE__*/ objectProto } from "../protos";
 
 /** Returns the primitive value of the specified object. */
 export const objectValueOf: {
-  (_this: Object): Object;
+    (_this: Object): Object;
 } = /*@__PURE__*/ protoShift(objectProto.valueOf) as any;
 
 /**
@@ -11,7 +11,7 @@ export const objectValueOf: {
  * @param v A property name.
  */
 export const objectHasOwnProperty: {
-  (_this: Object, v: PropertyKey): boolean;
+    (_this: Object, v: PropertyKey): boolean;
 } = /*@__PURE__*/ protoShift(objectProto.hasOwnProperty) as any;
 
 /**
@@ -19,7 +19,7 @@ export const objectHasOwnProperty: {
  * @param v Another object whose prototype chain is to be checked.
  */
 export const objectIsPrototypeOf: {
-  (_this: Object, v: Object): boolean;
+    (_this: Object, v: Object): boolean;
 } = /*@__PURE__*/ protoShift(objectProto.isPrototypeOf) as any;
 
 /**
@@ -27,5 +27,5 @@ export const objectIsPrototypeOf: {
  * @param v A property name.
  */
 export const objectPropertyIsEnumerable: {
-  (_this: Object, v: PropertyKey): boolean;
+    (_this: Object, v: PropertyKey): boolean;
 } = /*@__PURE__*/ protoShift(objectProto.propertyIsEnumerable) as any;

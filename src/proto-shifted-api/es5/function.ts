@@ -7,11 +7,11 @@ import { /*@__PURE__*/ functionProto } from "../protos";
  * @param argArray A set of arguments to be passed to the function.
  */
 export const functionApply: {
-  <T extends (...args: any) => any>(
-    func: T,
-    thisArg: any,
-    argArray?: Parameters<T>
-  ): ReturnType<T>;
+    <T extends (...args: any) => any>(
+        _this: T,
+        thisArg: any,
+        argArray?: Parameters<T>
+    ): ReturnType<T>;
 } = /*@__PURE__*/ protoShift(functionProto.apply) as any;
 
 /**
@@ -20,11 +20,11 @@ export const functionApply: {
  * @param argArray A list of arguments to be passed to the method.
  */
 export const functionCall: {
-  <T extends (...args: any) => any>(
-    func: T,
-    thisArg: any,
-    ...argArray: Parameters<T>
-  ): ReturnType<T>;
+    <T extends (...args: any) => any>(
+        _this: T,
+        thisArg: any,
+        ...argArray: Parameters<T>
+    ): ReturnType<T>;
 } = /*@__PURE__*/ protoShift(functionProto.call) as any;
 
 /**
@@ -34,9 +34,9 @@ export const functionCall: {
  * @param argArray A list of arguments to be passed to the new function.
  */
 export const functionBind: {
-  <T extends (...args: any) => any>(
-    func: T,
-    thisArg: any,
-    ...argArray: Parameters<T>
-  ): T;
+    <T extends (...args: any) => any>(
+        _this: T,
+        thisArg: any,
+        ...argArray: Parameters<T>
+    ): T;
 } = /*@__PURE__*/ protoShift(functionProto.bind) as any;

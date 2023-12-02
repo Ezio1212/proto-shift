@@ -1,12 +1,12 @@
 {
-  "extends": "@tsconfig/strictest",
-  "compilerOptions": {
-    "lib": ["DOM", "ESNext"],
-    "importsNotUsedAsValues": "remove",
-    "downlevelIteration": true,
-    "moduleResolution": "Node"
-  },
-  "compileOnSave": true,
-  "exclude": ["node_modules"],
-  "include": ["src"]
+    "extends": "@tsconfig/strictest",
+    "compilerOptions": {
+        "lib": ["DOM", "ESNext"],
+        "importsNotUsedAsValues": "remove",
+        "downlevelIteration": true,
+        "moduleResolution": "Node"
+    },
+    "compileOnSave": true,
+    "exclude": ["node_modules"],
+    "include": ["src"]
 }

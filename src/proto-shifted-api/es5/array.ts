@@ -1,5 +1,5 @@
 import { /*@__PURE__*/ protoShift } from "../../tool";
-import { Mapper, Predicate, Reducer, Traverser } from "../../types";
+import { Comparator, Mapper, Predicate, Reducer, Traverser } from "../../types";
 import { /*@__PURE__*/ arrayProto } from "../protos";
 
 /**
@@ -9,7 +9,7 @@ import { /*@__PURE__*/ arrayProto } from "../protos";
  * @param items Additional arrays and/or items to add to the end of the array.
  */
 export const arrayConcat: {
-  <T>(_this: T[], ...items: ConcatArray<T>[]): T[];
+    <T>(_this: T[], ...items: ConcatArray<T>[]): T[];
 } = /*@__PURE__*/ protoShift(arrayProto.concat) as any;
 
 /**
@@ -20,8 +20,8 @@ export const arrayConcat: {
  * which is coercible to the Boolean value false, or until the end of the array.
  */
 export const arrayEvery: {
-  // <T, S extends T>(_this: T[], predicate: Predicate<T, S>): _this is S[];
-  <T>(_this: T[], predicate: Predicate<T>): boolean;
+    // <T, S extends T>(_this: T[], predicate: Predicate<T, S>): _this is S[];
+    <T>(_this: T[], predicate: Predicate<T>): boolean;
 } = /*@__PURE__*/ protoShift(arrayProto.every) as any;
 
 /**
@@ -30,8 +30,8 @@ export const arrayEvery: {
  * @param predicate A function that accepts up to three arguments. The filter method calls the predicate function one time for each element in the array.
  */
 export const arrayFilter: {
-  // <T, S extends T>(_this: T[], predicate: Predicate<T, S>): S[];
-  <T>(_this: T[], predicate: Predicate<T>): T[];
+    // <T, S extends T>(_this: T[], predicate: Predicate<T, S>): S[];
+    <T>(_this: T[], predicate: Predicate<T>): T[];
 } = /*@__PURE__*/ protoShift(arrayProto.filter) as any;
 
 /**
@@ -40,7 +40,7 @@ export const arrayFilter: {
  * @param callbackfn  A function that accepts up to three arguments. forEach calls the callbackfn function one time for each element in the array.
  */
 export const arrayForEach: {
-  <T>(_this: T[], traverser: Traverser<T>): void;
+    <T>(_this: T[], traverser: Traverser<T>): void;
 } = /*@__PURE__*/ protoShift(arrayProto.forEach) as any;
 
 /**
@@ -50,7 +50,7 @@ export const arrayForEach: {
  * @param fromIndex The array index at which to begin the search. If fromIndex is omitted, the search starts at index 0.
  */
 export const arrayIndexOf: {
-  <T>(_this: T[], searchElement: T, fromIndex?: number): number;
+    <T>(_this: T[], searchElement: T, fromIndex?: number): number;
 } = /*@__PURE__*/ protoShift(arrayProto.indexOf) as any;
 
 /**
@@ -59,7 +59,7 @@ export const arrayIndexOf: {
  * @param separator A string used to separate one element of the array from the next in the resulting string. If omitted, the array elements are separated with a comma.
  */
 export const arrayJoin: {
-  <T>(_this: T[], separator?: string): string;
+    <T>(_this: T[], separator?: string): string;
 } = /*@__PURE__*/ protoShift(arrayProto.join) as any;
 
 /**
@@ -69,7 +69,7 @@ export const arrayJoin: {
  * @param fromIndex The array index at which to begin searching backward. If fromIndex is omitted, the search starts at the last index in the array.
  */
 export const arrayLastIndexOf: {
-  <T>(_this: T[], searchElement: T, fromIndex?: number): number;
+    <T>(_this: T[], searchElement: T, fromIndex?: number): number;
 } = /*@__PURE__*/ protoShift(arrayProto.lastIndexOf) as any;
 
 /**
@@ -79,7 +79,7 @@ export const arrayLastIndexOf: {
  * @param thisArg An object to which the this keyword can refer in the callbackfn function. If thisArg is omitted, undefined is used as the this value.
  */
 export const arrayMap: {
-  <T, U>(_this: T[], mapper: Mapper<T, U>): U[];
+    <T, U>(_this: T[], mapper: Mapper<T, U>): U[];
 } = /*@__PURE__*/ protoShift(arrayProto.map) as any;
 
 /**
@@ -88,7 +88,7 @@ export const arrayMap: {
  * @param _this The source array.
  */
 export const arrayPop: {
-  <T>(_this: T[]): T | undefined;
+    <T>(_this: T[]): T | undefined;
 } = /*@__PURE__*/ protoShift(arrayProto.pop) as any;
 
 /**
@@ -97,7 +97,7 @@ export const arrayPop: {
  * @param items New elements to add to the array.
  */
 export const arrayPush: {
-  <T>(_this: T[], ...items: T[]): number;
+    <T>(_this: T[], ...items: T[]): number;
 } = /*@__PURE__*/ protoShift(arrayProto.push) as any;
 /**
  * Calls the specified callback function for all the elements in an array. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function.
@@ -106,9 +106,9 @@ export const arrayPush: {
  * @param initialValue If initialValue is specified, it is used as the initial value to start the accumulation. The first call to the callbackfn function provides this value as an argument instead of an array value.
  */
 export const arrayReduce: {
-  <T>(_this: T[], reducer: Reducer<T, T>): T;
-  <T>(_this: T[], reducer: Reducer<T, T>, initialValue: T): T;
-  <T, U>(_this: T[], reducer: Reducer<T, U>, initialValue: U): U;
+    <T>(_this: T[], reducer: Reducer<T, T>): T;
+    <T>(_this: T[], reducer: Reducer<T, T>, initialValue: T): T;
+    <T, U>(_this: T[], reducer: Reducer<T, U>, initialValue: U): U;
 } = /*@__PURE__*/ protoShift(arrayProto.reduce) as any;
 /**
  * Calls the specified callback function for all the elements in an array, in descending order. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function.
@@ -117,9 +117,9 @@ export const arrayReduce: {
  * @param initialValue If initialValue is specified, it is used as the initial value to start the accumulation. The first call to the callbackfn function provides this value as an argument instead of an array value.
  */
 export const arrayReduceRight: {
-  <T>(_this: T[], reducer: Reducer<T, T>): T;
-  <T>(_this: T[], reducer: Reducer<T, T>, initialValue: T): T;
-  <T, U>(_this: T[], reducer: Reducer<T, U>, initialValue: U): U;
+    <T>(_this: T[], reducer: Reducer<T, T>): T;
+    <T>(_this: T[], reducer: Reducer<T, T>, initialValue: T): T;
+    <T, U>(_this: T[], reducer: Reducer<T, U>, initialValue: U): U;
 } = /*@__PURE__*/ protoShift(arrayProto.reduceRight) as any;
 
 /**
@@ -128,7 +128,7 @@ export const arrayReduceRight: {
  * @param _this The source array.
  */
 export const arrayReverse: {
-  <T>(_this: T[]): T[];
+    <T>(_this: T[]): T[];
 } = /*@__PURE__*/ protoShift(arrayProto.reverse) as any;
 
 /**
@@ -137,7 +137,7 @@ export const arrayReverse: {
  * @param _this The source array.
  */
 export const arrayShift: {
-  <T>(_this: T[]): T | undefined;
+    <T>(_this: T[]): T | undefined;
 } = /*@__PURE__*/ protoShift(arrayProto.shift) as any;
 
 /**
@@ -151,7 +151,7 @@ export const arrayShift: {
  * If end is undefined, then the slice extends to the end of the array.
  */
 export const arraySlice: {
-  <T>(_this: T[], start?: number, end?: number): T[];
+    <T>(_this: T[], start?: number, end?: number): T[];
 } = /*@__PURE__*/ protoShift(arrayProto.slice) as any;
 
 /**
@@ -162,7 +162,7 @@ export const arraySlice: {
  * which is coercible to the Boolean value true, or until the end of the array.
  */
 export const arraySome: {
-  <T>(_this: T[], predicate: Predicate<T>): boolean;
+    <T>(_this: T[], predicate: Predicate<T>): boolean;
 } = /*@__PURE__*/ protoShift(arrayProto.some) as any;
 
 /**
@@ -177,7 +177,7 @@ export const arraySome: {
  * ```
  */
 export const arraySort: {
-  <T>(_this: T[], compareFn?: (a: T, b: T) => number): T[];
+    <T>(_this: T[], compareFn?: Comparator<T>): T[];
 } = /*@__PURE__*/ protoShift(arrayProto.sort) as any;
 
 /**
@@ -188,8 +188,8 @@ export const arraySort: {
  * @returns An array containing the elements that were deleted.
  */
 export const arraySplice: {
-  <T>(_this: T[], start: number, deleteCount?: number): T[];
-  <T>(_this: T[], start: number, deleteCount: number, ...items: T[]): T[];
+    <T>(_this: T[], start: number, deleteCount?: number): T[];
+    <T>(_this: T[], start: number, deleteCount: number, ...items: T[]): T[];
 } = /*@__PURE__*/ protoShift(arrayProto.splice) as any;
 
 /**
@@ -198,5 +198,5 @@ export const arraySplice: {
  * @param items Elements to insert at the start of the array.
  */
 export const arrayUnshift: {
-  <T>(_this: T[], ...items: T[]): number;
+    <T>(_this: T[], ...items: T[]): number;
 } = /*@__PURE__*/ protoShift(arrayProto.unshift) as any;

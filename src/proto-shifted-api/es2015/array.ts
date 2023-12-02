@@ -13,8 +13,8 @@ import { /*@__PURE__*/ arrayProto } from "../protos";
  * predicate. If it is not provided, undefined is used instead.
  */
 export const arrayFind: {
-  <T, S extends T>(_this: T[], predicate: Predicate<T>): S | undefined;
-  <T>(_this: T[], predicate: Predicate<T>): T | undefined;
+    <T, S extends T>(_this: T[], predicate: Predicate<T>): S | undefined;
+    <T>(_this: T[], predicate: Predicate<T>): T | undefined;
 } = /*@__PURE__*/ protoShift(arrayProto.find) as any;
 /**
  * Returns the index of the first element in the array where predicate is true, and -1
@@ -25,7 +25,7 @@ export const arrayFind: {
  * findIndex immediately returns that element index. Otherwise, findIndex returns -1.
  */
 export const arrayFindIndex: {
-  <T>(_this: T[], predicate: Predicate<T>): number;
+    <T>(_this: T[], predicate: Predicate<T>): number;
 } = /*@__PURE__*/ protoShift(arrayProto.findIndex) as any;
 /**
  * Changes all array elements from `start` to `end` index to a static `value` and returns the modified array.
@@ -37,7 +37,7 @@ export const arrayFindIndex: {
  * length+end.
  */
 export const arrayFill: {
-  <T>(_this: T[], value: T, start?: number, end?: number): typeof _this;
+    <T>(_this: T[], value: T, start?: number, end?: number): typeof _this;
 } = /*@__PURE__*/ protoShift(arrayProto.fill) as any;
 /**
  * Returns the this object after copying a section of the array identified by start and end
@@ -50,5 +50,26 @@ export const arrayFill: {
  * @param end If not specified, length of the this object is used as its default value.
  */
 export const arrayCopyWithin: {
-  <T>(_this: T[], target: number, start: number, end?: number): typeof _this;
+    <T>(_this: T[], target: number, start: number, end?: number): typeof _this;
 } = /*@__PURE__*/ protoShift(arrayProto.copyWithin) as any;
+
+/**
+ * Returns an iterable of key, value pairs for every entry in the array
+ */
+export const arrayEntries: {
+    <T>(_this: T[]): IterableIterator<[number, T]>;
+} = /*@__PURE__*/ protoShift(arrayProto.entries) as any;
+
+/**
+ * Returns an iterable of keys in the array
+ */
+export const arrayKeys: {
+    <T>(_this: T[]): IterableIterator<number>;
+} = /*@__PURE__*/ protoShift(arrayProto.keys) as any;
+
+/**
+ * Returns an iterable of values in the array
+ */
+export const arrayValues: {
+    <T>(_this: T[]): IterableIterator<T>;
+} = /*@__PURE__*/ protoShift(arrayProto.values) as any;

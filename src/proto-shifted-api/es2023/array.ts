@@ -11,5 +11,5 @@ import { /*@__PURE__*/ arrayProto } from "../protos";
  * immediately returns that element value. Otherwise, findLast returns undefined.
  */
 export const arrayFindLast: {
-  <T>(_this: T[], predicate: Predicate<T>): T | undefined;
+    <T>(_this: T[], predicate: Predicate<T>): T | undefined;
 } = /*@__PURE__*/ protoShift(arrayProto.findLast) as any;
